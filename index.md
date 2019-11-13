@@ -6,9 +6,9 @@
 
 ### Blog Posts
 
-None yet, sadly.
+- [A Big Idea With A Big Weakness](big-idea-big-weakness.md)
 
 ```haskell
-firstPost :: (Route r, Content c) => r -> c -> Blog Post
-firstPost = undefined --LOL
+post :: (Route r, Content c) => r -> c -> Blog Post
+post = undefined --LOL
 ```
