@@ -1,4 +1,4 @@
-# Slow Check for a Higher-Order Function
+# A Slow Check for a Higher-Order Function
 
 As a relative newcomer to the Haskell community, I'm just beginning to acquaint myself with the mechanisms Haskellers use to verify their code. I really like the idea of property-based checks. I can write an algorithm and test each part of it by affirming its properties, either during or after I compile my code.
 
@@ -89,6 +89,6 @@ Once over that hurdle, I finally got to a working definition for my property:
 prop_curryAfterUncurryIsId :: Fun (Int, Int) Int -> Int -> Int -> Bool
 prop_curryAfterUncurryIsId (Fn2 f) a b = curry' (uncurry' f) a b == f a b
 
-I'm not thrilled that `id` is nowhere to be found in the definition, but I think the meaning comes through if you are comfortable with the syntax.
+I'm not thrilled that `id` is nowhere to be found in the definition, but I think the meaning comes through if you are comfortable with the syntax. Needless to say, this was all harder to verify than I hoped, but for now I'm chalking it up to my inexperience using QuickCheck.
 
 If you liked this post or have comments to share, please reach out to me! What experiences have you had using QuickCheck?
