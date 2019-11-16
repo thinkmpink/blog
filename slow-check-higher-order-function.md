@@ -4,7 +4,7 @@ As a relative newcomer to the Haskell community, I'm just beginning to acquaint 
 
 ### First option: QuickCheck
 
-To me, [QuickCheck](http://hackage.haskell.org/package/QuickCheck) sets the lowest barrier to entry. It can randomly generate many unit tests based on properties I express. There appears to be a nice set of properties I can use in the package `[Test.Invariant](http://hackage.haskell.org/package/test-invariant-0.4.5.0/docs/Test-Invariant.html)`, including testing whether my function is idempotent (a.k.a. running it more than once has no greater effect than running it once), or monotonic increasing, and so on.
+To me, [QuickCheck](http://hackage.haskell.org/package/QuickCheck) sets the lowest barrier to entry. It can randomly generate many unit tests based on properties I express. There appears to be a nice set of properties I can use in the package [`Test.Invariant`](http://hackage.haskell.org/package/test-invariant-0.4.5.0/docs/Test-Invariant.html), including testing whether my function is idempotent (a.k.a. running it more than once has no greater effect than running it once), or monotonic increasing, and so on.
 
 ### Second option: Type-level programming
 
@@ -27,7 +27,7 @@ uncurry' f (b, c) = f b c
 ### First attempt: Equational Reasoning
 
 When the book asked me to show that `curry' . uncurry' == id`, I first thought,
-"Okay, I will be a Good Boy and use [Equational Reasoning](http://www.haskellforall.com/2013/12/equational-reasoning.html)." Since the `=` function in Haskell means the same as `=` in math, unlike most programming languages where it means "Watch out, everything is about to become more complicated", I thought I was doing the right thing.
+"Okay, I will be a Good Boy and use [Equational Reasoning](http://www.haskellforall.com/2013/12/equational-reasoning.html)." Since the `=` function in Haskell means the same as `=` in math, unlike most programming languages where it means "Watch out, everything is about to become more complicated," I thought I was doing the right thing.
 
 To my dismay, my reasoning didn't compile. It failed on the premise that the same function had multiple definitions. While I can understand this failure--as  though the compiler is asking me "Which implementation do you want?"--it would be nice if the admittedly super-powered GHC could pick the most efficient definition for a function when I write multiple equivalent definitions.
 
